@@ -1,5 +1,5 @@
 #include <FlexiTimer2.h>
-
+ 
 
 //#include <EthernetDHCP.h>
 
@@ -123,7 +123,7 @@ void setup() {
   Serial.print("Hi there - we are setting up!");
   setColor('B');
   digitalWrite(redLEDPin, HIGH);
-  //Begin ethernet connection:
+  //Begin ethernet connection, and set indicator LED color values.
   int r = 0;
   int g = 0;
   int b = 255;
@@ -138,16 +138,16 @@ void setup() {
   digitalWrite(grnLEDPin, HIGH);
   digitalWrite(redLEDPin, LOW);
   Udp.begin(localPort);
-   FlexiTimer2::stop();
-   //if we are outside of the loop, then we have an IP address.
-   //indicate that the thing is working.
-    setColor('P');
-     //lcd.setCursor(0,0);
-     //lcd.print("CT:OK. IP:");
-     Serial.print("IP GOT!");
-     //lcd.setCursor(0,1);  
-     rgb.setColor(0,0,0);
-     delay(100);
+  FlexiTimer2::stop();
+  //if we are outside of the loop, then we have an IP address.
+  //indicate that the thing is working.
+  setColor('P');
+  //lcd.setCursor(0,0);
+  //lcd.print("CT:OK. IP:");
+  Serial.print("IP GOT!");
+  //lcd.setCursor(0,1);  
+  rgb.setColor(0,0,0);
+  delay(100);
 }
 
 
