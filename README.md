@@ -4,11 +4,11 @@ ArdNetTool
 An Arduino based Internet Connectivity Tester
 --------------
 
-	I wrote this code to help a few people I know test network ports at Columbus State University. They were going into all of the dorms armed with a laptop, and pinging the internet to test connectivity. This tool uses the Arduino ethernet shield and some LED's (a couple multicolored) to indicate if the port has given a valid IP address, and if the internet is availble. Currently, it pings google via TCP, and has UDP tests as well.
+I wrote this code to help a few people I know test network ports at Columbus State University. They were going into all of the dorms armed with a laptop, and pinging the internet to test connectivity. This tool uses the Arduino ethernet shield and some LED's (a couple multicolored) to indicate if the port has given a valid IP address, and if the internet is availble. Currently, it pings google via TCP, and has UDP tests as well.
 	
 Current Status of Project
 --------------
-	Currently, the UDP ping is untested as the TCP ping works fine. The multicolor LED indicates when the Arduino is waiting for an IP address. Of note is that since the Ethernet libraries have a blocking DHCP implementation I ran into some issues. I wanted the color LED to blink or change colors while the Arduino was getting an IP address. However, this does not work with the blocking DHCP. I had to write in a short timeout for the DHCP call (in the , and request a DHCP address over and put the thing in a loop. This was not optimal, so I now use the FlexiTimer2 library to change the led colors while waiting on the Ethernet DHCP.
+Currently, the UDP ping is untested as the TCP ping works fine. The multicolor LED indicates when the Arduino is waiting for an IP address. Of note is that since the Ethernet libraries have a blocking DHCP implementation I ran into some issues. I wanted the color LED to blink or change colors while the Arduino was getting an IP address. However, this does not work with the blocking DHCP. I had to write in a short timeout for the DHCP call (in the , and request a DHCP address over and put the thing in a loop. This was not optimal, so I now use the FlexiTimer2 library to change the led colors while waiting on the Ethernet DHCP.
 	
 Features to Add:
 --------------
